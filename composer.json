@@ -1,0 +1,8 @@
+{
+    "name": "tpoxa/CMARS",
+    "description": "Simple CMS module for Yii2",
+    "require": {
+        "php": ">=5.4.0",
+        "himiklab/yii2-colorbox-widget": "*"
+    }
+}

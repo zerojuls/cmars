@@ -1,5 +1,5 @@
 {
-    "name": "tpoxa/CMARS",
+    "name": "tpoxa/cmars",
     "description": "Simple CMS module for Yii2",
     "require": {
         "php": ">=5.4.0",

@@ -10,6 +10,7 @@ class CMARSBackend extends CMARS {
 
     public function init() {
         parent::init();
+         \Yii::$app->setModule('gridview', ['class' => 'kartik\grid\Module']);
 
         // custom initialization code goes here
     }

@@ -21,7 +21,7 @@ class CMARS extends \yii\base\Module {
         parent::init();
 
 
-
+       
         $this->modules = [
             'admin' => [
                 'class' => 'tpoxa\cmars\modules\backend\CMARSBackend',

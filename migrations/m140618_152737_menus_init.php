@@ -52,7 +52,7 @@ class m140618_152737_menus_init extends \yii\db\Migration {
             'title' => Schema::TYPE_STRING . '(100) NOT NULL',
             'url' => Schema::TYPE_STRING . '(100) NOT NULL',
             'type' => Schema::TYPE_STRING . '(32) NOT NULL',
-            'sortIdx' => Schema::TYPE_INTEGER,
+         
                 ], $tableOptions);
 
         $this->createTable(Menu::tableName(), [

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use kartik\grid\GridView;
 use kartik\icons\Icon;
 use common\models\User;
-use mtrofimenko\cmars\models\Post;
+use tpoxa\cmars\models\Post;
 
 $this->title = Yii::t('pages', 'Posts');
 $this->params['breadcrumbs'][] = $this->title;

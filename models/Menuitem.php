@@ -1,6 +1,6 @@
 <?php
 
-namespace mtrofimenko\cmars\models;
+namespace tpoxa\cmars\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;

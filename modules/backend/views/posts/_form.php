@@ -6,7 +6,7 @@ use yii\helpers\Url;
 use kartik\icons\Icon;
 use yii\jui\DatePicker;
 use common\extensions\fileapi\FileAPIAdvanced;
-use mtrofimenko\cmars\models\Post;
+use tpoxa\cmars\models\Post;
 ?>
 
 <div class="row">

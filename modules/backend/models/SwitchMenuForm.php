@@ -1,11 +1,11 @@
 <?php
 
-namespace mtrofimenko\cmars\modules\backend\models;
+namespace tpoxa\cmars\modules\backend\models;
 
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
-use mtrofimenko\cmars\models\Menu;
-use mtrofimenko\cmars\CMARS;
+use tpoxa\cmars\models\Menu;
+use tpoxa\cmars\CMARS;
 class SwitchMenuForm extends Model {
 
     public $menu_id;

@@ -1,6 +1,6 @@
 <?php
 
-namespace mtrofimenko\cmars\models;
+namespace tpoxa\cmars\models;
 
 use yii;
 use yii\db\ActiveRecord;

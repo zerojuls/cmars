@@ -1,15 +1,15 @@
 <?php
 
-namespace mtrofimenko\cmars\modules\backend\controllers;
+namespace tpoxa\cmars\modules\backend\controllers;
 
 use Yii;
 use yii\db\ActiveRecord;
 use yii\db\Query;
 use yii\web\HttpException;
-use mtrofimenko\cmars\modules\backend\components\Controller;
-use mtrofimenko\cmars\modules\backend\models\RubricSearch;
-use mtrofimenko\cmars\models\Rubric;
-use mtrofimenko\cmars\models\RubricTranslate;
+use tpoxa\cmars\modules\backend\components\Controller;
+use tpoxa\cmars\modules\backend\models\RubricSearch;
+use tpoxa\cmars\models\Rubric;
+use tpoxa\cmars\models\RubricTranslate;
 
 class RubricsController extends Controller {
 

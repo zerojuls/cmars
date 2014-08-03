@@ -1,10 +1,10 @@
 <?php
 
 use yii\db\Schema;
-use mtrofimenko\cmars\models\Rubric;
-use mtrofimenko\cmars\models\RubricTranslate;
-use mtrofimenko\cmars\models\Post;
-use mtrofimenko\cmars\models\PostTranslate;
+use tpoxa\cmars\models\Rubric;
+use tpoxa\cmars\models\RubricTranslate;
+use tpoxa\cmars\models\Post;
+use tpoxa\cmars\models\PostTranslate;
 
 class m140608_152727_posts_init extends \yii\db\Migration {
 

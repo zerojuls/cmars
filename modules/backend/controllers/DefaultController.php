@@ -1,7 +1,7 @@
 <?php
 
-namespace mtrofimenko\cmars\modules\backend\controllers;
-use mtrofimenko\cmars\modules\backend\components\Controller;
+namespace tpoxa\cmars\modules\backend\controllers;
+use tpoxa\cmars\modules\backend\components\Controller;
 
 
 class DefaultController extends Controller {

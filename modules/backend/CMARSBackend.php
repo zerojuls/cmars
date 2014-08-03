@@ -1,12 +1,12 @@
 <?php
 
-namespace mtrofimenko\cmars\modules\backend;
+namespace tpoxa\cmars\modules\backend;
 
-use mtrofimenko\cmars\CMARS;
+use tpoxa\cmars\CMARS;
 
 class CMARSBackend extends CMARS {
 
-    public $controllerNamespace = 'mtrofimenko\cmars\modules\backend\controllers';
+    public $controllerNamespace = 'tpoxa\cmars\modules\backend\controllers';
 
     public function init() {
         parent::init();

@@ -1,6 +1,6 @@
 <?php
 
-namespace mtrofimenko\cmars\modules\frontend\controllers;
+namespace tpoxa\cmars\modules\frontend\controllers;
 
 use yii\web\Controller;
 

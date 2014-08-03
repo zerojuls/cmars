@@ -1,13 +1,13 @@
 <?php
 
-namespace mtrofimenko\cmars;
+namespace tpoxa\cmars;
 
 use \Yii;
 use yii\helpers\ArrayHelper;
 
 class CMARS extends \yii\base\Module {
 
-    public $controllerNamespace = 'mtrofimenko\cmars\controllers';
+    public $controllerNamespace = 'tpoxa\cmars\controllers';
     public $app_id = 0;
     public $modelClasses = [];
     public $alias = '@cmars';
@@ -24,12 +24,12 @@ class CMARS extends \yii\base\Module {
 
         $this->modules = [
             'admin' => [
-                'class' => 'mtrofimenko\cmars\modules\backend\CMARSBackend',
+                'class' => 'tpoxa\cmars\modules\backend\CMARSBackend',
                 'enablePosts' => $this->enablePosts,
                 'enableRubrics' => $this->enableRubrics
             ],
             'frontend' => [
-                'class' => 'mtrofimenko\cmars\modules\frontend\CMARSFrontend',
+                'class' => 'tpoxa\cmars\modules\frontend\CMARSFrontend',
             ],
         ];
 
@@ -63,10 +63,10 @@ class CMARS extends \yii\base\Module {
     protected function getDefaultModelClasses() {
         // use single quotes so nothing gets escaped
         return [
-            'Post' => 'mtrofimenko\cmars\models\Post',
-            'Menu' => 'mtrofimenko\cmars\models\Menu',
-            'Menuitem' => 'mtrofimenko\cmars\models\Menuitem',
-            'MenuBuilder' => 'mtrofimenko\cmars\components\menuBuilder',
+            'Post' => 'tpoxa\cmars\models\Post',
+            'Menu' => 'tpoxa\cmars\models\Menu',
+            'Menuitem' => 'tpoxa\cmars\models\Menuitem',
+            'MenuBuilder' => 'tpoxa\cmars\components\menuBuilder',
         ];
     }
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace mtrofimenko\cmars\models;
+namespace tpoxa\cmars\models;
 
-use mtrofimenko\cmars\models\Menuitem;
+use tpoxa\cmars\models\Menuitem;
 use Yii;
 use yii\helpers\Html;
 

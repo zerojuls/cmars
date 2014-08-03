@@ -1,6 +1,6 @@
 <?php
 
-namespace mtrofimenko\cmars\modules\backend\components;
+namespace tpoxa\cmars\modules\backend\components;
 
 use yii\filters\AccessControl;
 

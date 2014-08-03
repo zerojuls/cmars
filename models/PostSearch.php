@@ -1,11 +1,11 @@
 <?php
 
-namespace mtrofimenko\cmars\models;
+namespace tpoxa\cmars\models;
 
 use yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use mtrofimenko\cmars\models\Post;
+use tpoxa\cmars\models\Post;
 
 class PostSearch extends Model {
 

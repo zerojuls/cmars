@@ -1,6 +1,6 @@
 <?php
 
-namespace mtrofimenko\cmars\modules\backend\widgets\NestedList;
+namespace tpoxa\cmars\modules\backend\widgets\NestedList;
 
 use yii\web\AssetBundle;
 

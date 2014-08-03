@@ -1,12 +1,12 @@
 <?php
 
-namespace mtrofimenko\cmars\modules\backend\models;
+namespace tpoxa\cmars\modules\backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use mtrofimenko\cmars\models\Rubric;
-use mtrofimenko\cmars\models\RubricTranslate;
+use tpoxa\cmars\models\Rubric;
+use tpoxa\cmars\models\RubricTranslate;
 
 class RubricSearch extends Model {
 

@@ -1,15 +1,15 @@
 <?php
 
-namespace mtrofimenko\cmars\modules\backend\controllers;
+namespace tpoxa\cmars\modules\backend\controllers;
 
 use Yii;
 use yii\web\HttpException;
-use mtrofimenko\cmars\modules\backend\components\Controller;
+use tpoxa\cmars\modules\backend\components\Controller;
 use common\models\User;
-use mtrofimenko\cmars\models\Post;
-use mtrofimenko\cmars\models\PostSearch;
-use mtrofimenko\cmars\models\PostTranslate;
-use mtrofimenko\cmars\models\Rubric;
+use tpoxa\cmars\models\Post;
+use tpoxa\cmars\models\PostSearch;
+use tpoxa\cmars\models\PostTranslate;
+use tpoxa\cmars\models\Rubric;
 use common\extensions\fileapi\actions\UploadAction;
 use common\extensions\fileapi\actions\DeleteAction;
 

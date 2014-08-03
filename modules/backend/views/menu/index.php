@@ -4,7 +4,7 @@ $this->title = $model->description2;
 use kartik\widgets\ActiveForm;
 use yii\helpers\Html;
 use \yii\web\JsExpression;
-use mtrofimenko\cmars\modules\backend\widgets\NestedList\NestedList;
+use tpoxa\cmars\modules\backend\widgets\NestedList\NestedList;
 use yii\bootstrap\Tabs;
 use himiklab\colorbox\Colorbox;
 ?>

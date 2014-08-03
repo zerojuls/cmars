@@ -35,7 +35,7 @@ use tpoxa\cmars\models\Menuitem;
 
  */
 
-class m140608_152727_posts_init extends \yii\db\Migration {
+class m140618_152737_menus_init extends \yii\db\Migration {
 
     public function up() {
         $tableOptions = null;

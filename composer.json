@@ -5,5 +5,10 @@
         "php": ">=5.4.0",
         "himiklab/yii2-colorbox-widget": "*",
         "kartik-v/yii2-grid": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "tpoxa\\cmars\\": ""
+        }
     }
 }

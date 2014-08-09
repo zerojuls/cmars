@@ -14,6 +14,8 @@ $form = ActiveForm::begin([
 
     if ($model->type == 'custom'):
         echo $form->field($model, 'url');
+    else:
+        echo $model->type;
     endif;
 
     echo Html::submitButton(Yii::t('rubrics', 'Save'), [

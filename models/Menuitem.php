@@ -29,7 +29,7 @@ class Menuitem extends \yii\db\ActiveRecord {
         return [
             [['type'], 'string'],
             [['title', 'url'], 'safe'],
-            [['menu_id'], 'required'],
+            //[['menu_id'], 'required'],
             [['menu_id'], 'integer']
         ];
     }

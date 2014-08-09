@@ -76,16 +76,21 @@ class Menu extends \yii\db\ActiveRecord {
 
     public static function updateItems($items, $parent_id = 0) {
 
+        print_r($items);
         $i = 1;
-        foreach ($items as $key => $item) {
+        foreach ($items as $item) {
 
+            
             if ($_item = Menuitem::findOne($item['id'])) {
+               // echo 'item found ' . $item['id'];
                 $_item->sortIdx = $i++;
                 $_item->parent_id = $parent_id;
                 $_item->save();
+            } else {
+                //echo 'item not found ' . $item['id'], PHP_EOL;
             }
             if (isset($item['children'])) {
-                return self::updateItems($item['children'], $item['id']);
+                self::updateItems($item['children'], $item['id']);
             }
         }
     }

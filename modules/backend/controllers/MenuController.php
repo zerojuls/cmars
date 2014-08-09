@@ -48,6 +48,7 @@ class MenuController extends Controller {
     public function actionSave() {
         if (isset($_POST['data'])) {
             $data = Json::decode($_POST['data']);
+           
             Menu::updateItems($data);
         }
     }

@@ -14,7 +14,10 @@ class MenuController extends Controller {
     public function actionIndex($menu_id = null) {
 
         $menu_class = \Yii::$app->getModule('cms')->model('Menu');
-        $model = $menu_id ? $menu_class::findOne($menu_id) : $menu_class::find()->one();
+
+        $model = $menu_id ? $menu_class::findOne($menu_id) : $menu_class::find()->where([
+                    'app_id' => \Yii::$app->getModule('cms')->app_id
+                ])->one();
 
         if ($model == null) {
             return $this->redirect(['create']);

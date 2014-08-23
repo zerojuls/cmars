@@ -32,12 +32,13 @@ use tpoxa\cmars\models\Post;
                     <div class="row">
                         <div class="col-lg-6">
                             <?php
-                            echo $form->field($model, 'rubric_id')->dropDownList($rubrics, ['prompt' => Yii::t('posts', 'Select Rubric')]);
+                            if ($this->context->module->enableRubrics) {
+                                echo $form->field($model, 'rubric_id')->dropDownList($rubrics, ['prompt' => Yii::t('posts', 'Select Rubric')]);
+                            }
                             echo $form->field($model, 'status')->dropDownList($postStatuses, ['prompt' => Yii::t('posts', 'Select Status')]);
 
                             echo $form->field($translate, 'title');
                             echo $form->field($model, 'alias');
-                            echo $form->field($model, 'youtube_code');
                             ?>
                         </div>
                     </div>
@@ -97,7 +98,7 @@ use tpoxa\cmars\models\Post;
                     <div class="row">
                         <div class="col-lg-6">
 
-                            <?= $form->field($model, 'add_preview_to_full')->checkbox(); ?>
+
 
                             <?=
                             $form->field($model, 'published_date')->widget(DatePicker::className(), [

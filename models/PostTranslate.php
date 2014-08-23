@@ -23,12 +23,12 @@ class PostTranslate extends ActiveRecord {
     public function rules() {
         return [
             [['title', 'full_text', 'language', 'post_id'], 'required'],
-            ['title', 'string', 'min' => 6, 'max' => 64],
-            ['full_text', 'string', 'min' => 6, 'max' => 4096],
-            ['preview_text', 'string', 'min' => 6, 'max' => 1024],
-            ['meta_title', 'string', 'min' => 6, 'max' => 1024],
-            ['meta_descriptions', 'string', 'min' => 6, 'max' => 1024],
-            ['meta_keywords', 'string', 'min' => 6, 'max' => 1024],
+            ['title', 'string', 'max' => 64],
+            ['full_text', 'string', 'max' => 4096],
+            ['preview_text', 'string', 'max' => 1024],
+            ['meta_title', 'safe'],
+            ['meta_descriptions', 'safe'],
+            ['meta_keywords', 'safe'],
             ['language', 'in', 'range' => array_keys(Yii::$app->params['languages'])],
             ['post_id', 'integer'],
         ];

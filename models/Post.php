@@ -38,13 +38,8 @@ class Post extends ActiveRecord {
             ['status', 'in', 'range' => array_keys(self::getStatusArray()), 'on' => ['admin-edit-page-static']],
             ['author_id', 'required', 'on' => ['admin-edit-page-static']],
             ['author_id', 'integer', 'on' => ['admin-edit-page-static']],
-            
-            ['rubric_id', 'required', 'on' => ['admin-edit-page-static']],
-            ['rubric_id', 'integer', 'on' => ['admin-edit-page-static']],
             ['published_date', 'string', 'on' => ['admin-edit-page-static']],
             ['add_preview_to_full', 'boolean', 'on' => ['admin-edit-page-static']],
-            ['youtube_code', 'match', 'pattern' => '/^[a-z0-9]+$/', 'on' => ['admin-edit-page-static']],
-            ['youtube_code', 'string', 'min' => 6, 'max' => 12, 'on' => ['admin-edit-page-static']],
             ['preview_img', 'string', 'on' => ['admin-edit-page-static']],
         ];
     }
@@ -90,11 +85,9 @@ class Post extends ActiveRecord {
                 'alias',
                 'status',
                 'author_id',
-             
                 'rubric_id',
                 'published_date',
                 'add_preview_to_full',
-                'youtube_code',
                 'preview_img'
             ],
         ];
@@ -128,11 +121,18 @@ class Post extends ActiveRecord {
             }
 
             if (!$this->published_date) {
-                $this->published_date = date('Y-m-d', time());
+                $this->published_date = time();
+            } else {
+                $this->published_date = strtotime($this->published_date);
             }
             return true;
         }
         return false;
+    }
+
+    public function afterFind() {
+        $this->published_date = date('Y-m-d', $this->published_date);
+        parent::afterFind();
     }
 
     public static function getStatusArray() {

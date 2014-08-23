@@ -13,6 +13,7 @@ class CMARS extends \yii\base\Module {
     public $alias = '@cmars';
     public $enablePosts = true;
     public $enableRubrics = true;
+    public $viewTemplate = 'view';
     //
     protected $_models;
 
@@ -21,7 +22,7 @@ class CMARS extends \yii\base\Module {
         parent::init();
 
 
-       
+
         $this->modules = [
             'admin' => [
                 'class' => 'tpoxa\cmars\modules\backend\CMARSBackend',
@@ -30,6 +31,7 @@ class CMARS extends \yii\base\Module {
             ],
             'frontend' => [
                 'class' => 'tpoxa\cmars\modules\frontend\CMARSFrontend',
+                'viewTemplate' => $this->viewTemplate,
             ],
         ];
 

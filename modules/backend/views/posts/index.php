@@ -32,18 +32,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'title',
                 'alias',
                 [
-                    'attribute' => 'author_id',
-                    'vAlign' => 'middle',
-                    'value' => function ($model) {
-                $user = User::find()
-                        ->select(['username'])
-                        ->where(['id' => $model->author_id])
-                        ->one();
-                return $user->username;
-            },
-                    'filter' => Html::activeDropDownList($searchModel, 'author_id', $users, ['class' => 'form-control', 'prompt' => Yii::t('pages', 'Users')])
-                ],
-                [
                     'attribute' => 'status',
                     'vAlign' => 'middle',
                     'value' => function ($model) {
@@ -57,7 +45,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     'header' => Yii::t('pages', 'Actions'),
                     'class' => 'kartik\grid\ActionColumn',
                     'dropdown' => false,
-                    'vAlign' => 'middle',
                     'viewOptions' => ['title' => Yii::t('pages', 'Details')],
                     'updateOptions' => ['title' => Yii::t('pages', 'Edit page')],
                     'deleteOptions' => ['title' => Yii::t('pages', 'Delete action')],

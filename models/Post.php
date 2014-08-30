@@ -39,7 +39,6 @@ class Post extends ActiveRecord {
             ['author_id', 'integer', 'on' => ['admin-edit-page-static']],
             ['published_date', 'string', 'on' => ['admin-edit-page-static']],
             ['add_preview_to_full', 'boolean', 'on' => ['admin-edit-page-static']],
-            ['preview_img', 'string', 'on' => ['admin-edit-page-static']],
         ];
     }
 
@@ -55,23 +54,7 @@ class Post extends ActiveRecord {
                     ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
                 ],
             ],
-            'uploadBehavior' => [
-                'class' => UploadBehavior::className(),
-                'attributes' => ['preview_img'],
-                'scenarios' => ['admin-edit-page-static'],
-                'deleteScenarios' => [
-                //'image_url' => 'delete-image',
-                //'preview_url' => 'delete-preview'
-                ],
-                'path' => [
-                    //'image_url' => Post::imagePath(),
-                    'preview_img' => Post::previewPath(),
-                ],
-                'tempPath' => [
-                    //'image_url' => Post::imageTempPath(),
-                    'preview_img' => Post::previewTempPath()
-                ]
-            ]
+            
         ];
     }
 
@@ -87,7 +70,7 @@ class Post extends ActiveRecord {
                 'rubric_id',
                 'published_date',
                 'add_preview_to_full',
-                'preview_img'
+               
             ],
         ];
     }
@@ -105,7 +88,6 @@ class Post extends ActiveRecord {
             'status' => Yii::t('posts', 'Status'),
             'published_date' => Yii::t('posts', 'Published date'),
             'add_preview_to_full' => Yii::t('posts', 'Add Preview'),
-            'youtube_code' => Yii::t('posts', 'Youtube code')
         ];
     }
 

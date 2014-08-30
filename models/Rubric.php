@@ -67,4 +67,8 @@ class Rubric extends ActiveRecord {
         return $sections;
     }
 
+    public function getUrl() {
+        return '';
+    }
+
 }

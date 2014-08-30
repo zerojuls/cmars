@@ -45,6 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'header' => Yii::t('pages', 'Actions'),
                     'class' => 'kartik\grid\ActionColumn',
                     'dropdown' => false,
+                    'width' => '200px',
                     'viewOptions' => ['title' => Yii::t('pages', 'Details')],
                     'updateOptions' => ['title' => Yii::t('pages', 'Edit page')],
                     'deleteOptions' => ['title' => Yii::t('pages', 'Delete action')],

@@ -40,15 +40,13 @@ class PostSearch extends Model {
         ]);
 
 
-        if (!($this->load($params) && $this->validate())) {
-            return $dataProvider;
-        }
+        $this->load($params);
 
         $query->leftJoin(PostTranslate::tableName() . ' as tr ', '' .
                 Post::tableName() . '.id = tr.post_id AND tr.language = \'' . Yii::$app->language . '\''
         );
         $query->andWhere(['like', 'tr.title', $this->title]);
-
+        $query->andWhere(['app_id' => \Yii::$app->getModule('cms')->app_id]);
 
         $this->addCondition($query, 'alias', true);
         $this->addCondition($query, 'views', true);

@@ -70,7 +70,7 @@ use tpoxa\cmars\models\Post;
                             <?=
                             $form->field($translate, 'preview_text')->widget('common\extensions\tinymce\Tinymce', [
                                 'admin' => true,
-                                '_id' => $translate->language,
+                                'id' => $translate->language,
                                 'settings' => [
                                     'pagebreak_separator' => Yii::$app->params['moreTag']
                                 ]
@@ -85,7 +85,7 @@ use tpoxa\cmars\models\Post;
                             <?=
                             $form->field($translate, 'full_text')->widget('common\extensions\tinymce\Tinymce', [
                                 'admin' => true,
-                                '_id' => $translate->language,
+                                'id' => $translate->language,
                                 'settings' => [
                                     'pagebreak_separator' => Yii::$app->params['moreTag']
                                 ]

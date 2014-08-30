@@ -12,6 +12,6 @@ $this->params['breadcrumbs'] = [
 echo $this->render('_form', [
     'model' => $model,
     'translates' => $translates,
-    'sections' => $sections
+   
 ]);
 ?>

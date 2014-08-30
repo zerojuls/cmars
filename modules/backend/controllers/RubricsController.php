@@ -55,6 +55,8 @@ class RubricsController extends Controller {
 
     public function actionCreate() {
         $model = new Rubric();
+        $model->app_id = \Yii::$app->getModule('cms')->app_id;
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $translate = new RubricTranslate();
             if ($translate->load(Yii::$app->request->post()) && $translate->validate()) {

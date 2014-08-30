@@ -24,7 +24,6 @@ class Rubric extends ActiveRecord {
             ['name', 'filter', 'filter' => 'trim'],
             ['name', 'match', 'pattern' => '/^[a-zA-Z0-9_]+$/'],
             ['name', 'string', 'min' => 3, 'max' => 32],
-            
         ];
     }
 
@@ -34,7 +33,6 @@ class Rubric extends ActiveRecord {
     public function attributeLabels() {
         return [
             'name' => Yii::t('rubrics', 'Name'),
-           
         ];
     }
 
@@ -48,18 +46,18 @@ class Rubric extends ActiveRecord {
         return ($model !== null) ? $model->title : '';
     }
 
-    public static function getRubricsForSelect($id) {
+    public static function getRubricsForSelect($app_id = 0) {
         $sections = [];
         $sql = "SELECT s.id, st.title
                 FROM " . Rubric::tableName() . " as s
                 LEFT JOIN " . RubricTranslate::tableName() . " as st
                    ON s.id = st.rubric_id
-                WHERE st.language = :lang
+                WHERE st.language = :lang and s.app_id = :app_id
                     
         ";
         $models = RubricTranslate::findBySql($sql, [
                     ':lang' => Yii::$app->language,
-                    
+                    ':app_id' => $app_id,
                 ])->all();
         foreach ($models as $model) {
             $sections[] = [

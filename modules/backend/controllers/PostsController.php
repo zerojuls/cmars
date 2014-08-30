@@ -47,6 +47,8 @@ class PostsController extends Controller {
 
     public function actionCreate() {
         $model = new Post(['scenario' => 'admin-edit-page-static']);
+        $model->app_id = \Yii::$app->getModule('cms')->app_id;
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $translate = new PostTranslate();
             $translate->post_id = $model->id;
@@ -66,7 +68,7 @@ class PostsController extends Controller {
                         'model' => $model,
                         'translates' => $translates,
                         'postStatuses' => $postStatuses,
-                        'rubrics' => []
+                        'rubrics' => Rubric::getRubricsForSelect($model->app_id)
             ]);
         }
     }
@@ -87,11 +89,10 @@ class PostsController extends Controller {
                 $translates[] = $this->getTranslateModel($id, $lang);
             }
             $postStatuses = Post::getStatusArray();
-          
+
             return $this->render('create', [
                         'model' => $model,
                         'translates' => $translates,
-                      
                         'postStatuses' => $postStatuses,
                         'rubrics' => []
             ]);
@@ -162,7 +163,5 @@ class PostsController extends Controller {
             throw new HttpException(400);
         }
     }
-
-
 
 }

@@ -4,7 +4,7 @@ $this->title = Yii::t('rubrics', 'Create rubric');
 $this->params['breadcrumbs'] = [
     [
         'label' => Yii::t('rubrics', 'Rubrics'),
-        'url' => 'sections'
+        'url' => ['rubrics/index']
     ],
     $this->title
 ];
@@ -12,7 +12,5 @@ $this->params['breadcrumbs'] = [
 echo $this->render('_form', [
     'model' => $model,
     'translates' => $translates,
-    
 ]);
-
 ?>

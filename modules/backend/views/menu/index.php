@@ -23,7 +23,7 @@ use himiklab\colorbox\Colorbox;
         <?php //print_r($model->getItemsMenu());?>
         <?php echo NestedList::widget(['items' => $model->getItemsMenu()]); ?>
     </div>
-    <div class="col-md-5 pull-right newmenutype" style="padding-top: 12px">
+    <div class="col-md-7 pull-right newmenutype" style="padding-top: 12px">
         <?php
         echo Tabs::widget([
             'items' => $this->context->getMenuSections($model),

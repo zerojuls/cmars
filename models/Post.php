@@ -33,7 +33,6 @@ class Post extends ActiveRecord {
             ['alias', 'required', 'on' => ['admin-edit-page-static']],
             ['alias', 'match', 'pattern' => '/^[a-z0-9_-]+$/', 'on' => ['admin-edit-page-static']],
             ['alias', 'string', 'min' => 3, 'max' => 64, 'on' => ['admin-edit-page-static']],
-            ['alias', 'unique', 'on' => ['admin-edit-page-static']],
             ['status', 'required', 'on' => ['admin-edit-page-static']],
             ['status', 'in', 'range' => array_keys(self::getStatusArray()), 'on' => ['admin-edit-page-static']],
             ['author_id', 'required', 'on' => ['admin-edit-page-static']],

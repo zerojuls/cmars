@@ -54,7 +54,6 @@ class Post extends ActiveRecord {
                     ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
                 ],
             ],
-            
         ];
     }
 
@@ -70,7 +69,6 @@ class Post extends ActiveRecord {
                 'rubric_id',
                 'published_date',
                 'add_preview_to_full',
-               
             ],
         ];
     }
@@ -163,11 +161,12 @@ class Post extends ActiveRecord {
     }
 
     public function getUrl() {
-        return "/$this->alias.html";
+        return ['post/view', 'alias' => $this->alias];
     }
 
     public static function getPostByAlias($url) {
         preg_match("/[0-9a-zA-Z_-]+/", $url, $alias);
+
         if ($alias && is_array($alias)) {
             $sql = "SELECT p.id, pt.full_text, pt.title, pt.meta_title,
                     pt.meta_descriptions, pt.meta_keywords, pt.preview_text
@@ -175,10 +174,11 @@ class Post extends ActiveRecord {
                 LEFT JOIN " . PostTranslate::tableName() . " as pt
                    ON p.id = pt.post_id
                 WHERE pt.language = :lang
-                    AND p.alias = :alias";
+                    AND p.alias = :alias AND p.app_id =:app_id ";
             return PostTranslate::findBySql($sql, [
                         ':lang' => Yii::$app->language,
-                        ':alias' => current($alias)
+                        ':alias' => current($alias),
+                        ':app_id' => \Yii::$app->getModule('cms')->app_id
                     ])->one();
             $serch = new PostSearch();
             $serch->search([]);

@@ -1,8 +1,8 @@
 <?php
 
 $this->title = Yii::t('pages', 'Update post #{id}', [
-    'id' => $model->id
-]);
+            'id' => $model->id
+        ]);
 $this->params['breadcrumbs'] = [
     [
         'label' => Yii::t('pages', 'Posts'),
@@ -14,9 +14,7 @@ $this->params['breadcrumbs'] = [
 echo $this->render('_form', [
     'model' => $model,
     'translates' => $translates,
-    'sections' => $sections,
     'postStatuses' => $postStatuses,
     'rubrics' => $rubrics
 ]);
-
 ?>

@@ -5,7 +5,8 @@
         "php": ">=5.4.0",
         "himiklab/yii2-colorbox-widget": "*",
         "kartik-v/yii2-grid": "*",
-        "kartik-v/yii2-detail-view": "*"
+        "kartik-v/yii2-detail-view": "*",
+        "kartik-v/yii2-helpers": "*"
     },
     "autoload": {
         "psr-4": {

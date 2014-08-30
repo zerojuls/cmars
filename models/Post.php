@@ -165,10 +165,10 @@ class Post extends ActiveRecord {
         return [];
     }
 
-    public static function getPostByAlias($url) {
-        preg_match("/[0-9a-zA-Z_-]+/", $url, $alias);
+    public static function getPostByAlias($alias) {
 
-        if ($alias && is_array($alias)) {
+
+        if ($alias) {
             $sql = "SELECT p.id, pt.full_text, pt.title, pt.meta_title,
                     pt.meta_descriptions, pt.meta_keywords, pt.preview_text
                 FROM " . Post::tableName() . " as p
@@ -178,7 +178,7 @@ class Post extends ActiveRecord {
                     AND p.alias = :alias AND p.app_id =:app_id ";
             return PostTranslate::findBySql($sql, [
                         ':lang' => Yii::$app->language,
-                        ':alias' => current($alias),
+                        ':alias' => $alias,
                         ':app_id' => \Yii::$app->getModule('cms')->app_id
                     ])->one();
             $serch = new PostSearch();

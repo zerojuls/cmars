@@ -43,27 +43,7 @@ use tpoxa\cmars\models\Post;
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <?=
-                            $form->field($model, 'preview_img')->widget(FileAPIAdvanced::className(), [
-                                'url' => Post::previewUrl(),
-                                'deleteUrl' => Url::toRoute('pages/delete-image'),
-                                'deleteTempUrl' => Url::toRoute('pages/deleteTempPreview'),
-                                'settings' => [
-                                    'url' => Url::toRoute('uploadTempPreview'),
-                                    'imageTransform' => [
-                                        'imageOriginal' => false,
-                                        'width' => $model->previewWidth,
-                                        'height' => $model->previewHeight,
-                                        'preview' => true
-                                    ]
-                                ]
-                            ]);
-                            ?>
-                        </div>
-                    </div>
-
+                    
 
                     <div class="row">
                         <div class="col-lg-12">

@@ -94,7 +94,7 @@ class PostsController extends Controller {
                         'model' => $model,
                         'translates' => $translates,
                         'postStatuses' => $postStatuses,
-                        'rubrics' => []
+                        'rubrics' => Rubric::getRubricsForSelect($model->app_id)
             ]);
         }
     }

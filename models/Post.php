@@ -161,7 +161,8 @@ class Post extends ActiveRecord {
     }
 
     public function getUrl() {
-        return ['post/view', 'alias' => $this->alias];
+
+        return yii\helpers\Url::toRoute(['post/view', 'alias' => $this->alias]);
     }
 
     public static function getPostByAlias($url) {

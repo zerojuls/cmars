@@ -32,9 +32,12 @@ class RubricSearch extends Model {
             ]
         ]);
 
-        $this->load($params);
-
         $query->andWhere(['app_id' => \Yii::$app->getModule('cms')->app_id]);
+
+        if (!($this->load($params) && $this->validate())) {
+            return $dataProvider;
+        }
+
         $query->leftJoin(RubricTranslate::tableName() . ' as tr ', '' .
                 Rubric::tableName() . '.id = tr.rubric_id AND tr.language = \'' . Yii::$app->language . '\''
         );

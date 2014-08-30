@@ -60,11 +60,10 @@ class Rubric extends ActiveRecord {
                     ':app_id' => $app_id,
                 ])->all();
         foreach ($models as $model) {
-            $sections[] = [
-                'title' => $model->title,
-                'id' => $model->id
-            ];
+            $sections[$model->id] = $model->title;
         }
+
+
         return $sections;
     }
 

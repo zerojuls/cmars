@@ -53,7 +53,7 @@ use a3ch3r46\tinymce\TinyMCE;
                             TinyMCE::widget(['model' => $translate,
                                 'attribute' => 'full_text',
                                 'id' => $translate->language,
-                                'toggle' => ['active' => true]
+                              
                             ]);
                             ?>
 

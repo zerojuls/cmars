@@ -1,9 +1,10 @@
 <?php
-
 $this->title = $model->title;
 ?>
 
-<?php
 
-echo $model->full_text;
-?>
+<div class="pageContent">
+    <?php
+    echo $model->full_text;
+    ?>
+</div>

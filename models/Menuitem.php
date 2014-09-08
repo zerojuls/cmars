@@ -19,7 +19,7 @@ class Menuitem extends \yii\db\ActiveRecord {
      * @inheritdoc
      */
     public static function tableName() {
-        return 'menuitems';
+        return '{{%menuitems}}';
     }
 
     /**

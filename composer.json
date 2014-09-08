@@ -6,7 +6,8 @@
         "himiklab/yii2-colorbox-widget": "*",
         "kartik-v/yii2-grid": "*",
         "kartik-v/yii2-detail-view": "*",
-        "kartik-v/yii2-helpers": "*"
+        "kartik-v/yii2-helpers": "*",
+        "3ch3r46/yii2-tinymce": "*"
     },
     "autoload": {
         "psr-4": {

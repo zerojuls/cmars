@@ -7,6 +7,7 @@ use kartik\icons\Icon;
 use yii\jui\DatePicker;
 use common\extensions\fileapi\FileAPIAdvanced;
 use tpoxa\cmars\models\Post;
+use a3ch3r46\tinymce\TinyMCE;
 ?>
 
 <div class="row">
@@ -43,33 +44,19 @@ use tpoxa\cmars\models\Post;
                         </div>
                     </div>
 
-                    
+
+
 
                     <div class="row">
                         <div class="col-lg-12">
                             <?=
-                            $form->field($translate, 'preview_text')->widget('common\extensions\tinymce\Tinymce', [
-                                'admin' => true,
-                                'id' => $translate->language,
-                                'settings' => [
-                                    'pagebreak_separator' => Yii::$app->params['moreTag']
-                                ]
-                            ])
-                            ?>
+                            $form->field($translate, 'full_text')->widget(TinyMCE::widget([
 
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <?=
-                            $form->field($translate, 'full_text')->widget('common\extensions\tinymce\Tinymce', [
-                                'admin' => true,
-                                'id' => $translate->language,
-                                'settings' => [
-                                    'pagebreak_separator' => Yii::$app->params['moreTag']
-                                ]
-                            ])
+                                        'id' => $translate->language,
+                                        'settings' => [
+                                            'pagebreak_separator' => Yii::$app->params['moreTag']
+                                        ]
+                            ]))
                             ?>
 
                         </div>

@@ -50,13 +50,11 @@ use a3ch3r46\tinymce\TinyMCE;
                     <div class="row">
                         <div class="col-lg-12">
                             <?=
-                            $form->field($translate, 'full_text')->widget(TinyMCE::widget([
-
-                                        'id' => $translate->language,
-                                        'settings' => [
-                                            'pagebreak_separator' => Yii::$app->params['moreTag']
-                                        ]
-                            ]))
+                            TinyMCE::widget(['model' => $translate,
+                                'attribute' => 'full_text',
+                                'id' => $translate->language,
+                                'toggle' => ['active' => true]
+                            ]);
                             ?>
 
                         </div>

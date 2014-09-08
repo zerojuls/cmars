@@ -23,7 +23,7 @@ use a3ch3r46\tinymce\TinyMCE;
                          <?php
                          $form = ActiveForm::begin([
                                      'enableClientValidation' => true,
-                                     'enableAjaxValidation' => true,
+                                     'enableAjaxValidation' => false,
                                      'validateOnChange' => false
                          ]);
 

@@ -17,7 +17,7 @@ use kartik\icons\Icon;
                     <?php
                     $form = ActiveForm::begin([
                                 'enableClientValidation' => true,
-                                'enableAjaxValidation' => true,
+                                'enableAjaxValidation' => false,
                                 'validateOnChange' => false
                     ]);
                     echo $form->field($model, 'name');
